@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Putdal 💖</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600;700;800&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pink: #f4a7c3;
+  --pink-deep: #e07faa;
+  --pink-light: #fce4ef;
+  --peach: #f9c9a8;
+  --peach-light: #fdeee4;
+  --cream: #fff8f3;
+  --purple: #c9a7e0;
+  --purple-light: #ede4f7;
+  --purple-deep: #a07cbd;
+  --text-dark: #4a2c3a;
+  --text-mid: #7a4f62;
+  --text-soft: #b07a90;
+  --white: #ffffff;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--cream);
+  color: var(--text-dark);
+  overflow-x: hidden;
+  cursor: default;
+}
+
+/* FLOATING HEARTS BG */
+.hearts-bg {
+  position: fixed; top:0; left:0; width:100%; height:100%;
+  pointer-events: none; z-index: 0; overflow: hidden;
+}
+.floating-heart {
+  position: absolute; bottom: -60px; font-size: 1.2rem;
+  animation: floatUp linear infinite;
+  opacity: 0.4;
+}
+@keyframes floatUp {
+  0% { transform: translateY(0) rotate(0deg) scale(1); opacity:0.4; }
+  50% { opacity:0.6; }
+  100% { transform: translateY(-110vh) rotate(20deg) scale(0.5); opacity:0; }
+}
+
+/* NAVBAR */
+nav {
+  position: fixed; top:0; left:0; right:0; z-index:100;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(244,167,195,0.3);
+  display: flex; gap:0; justify-content: center;
+  padding: 10px 20px;
+}
+nav a {
+  text-decoration: none; font-size: 12px; font-weight: 700;
+  color: var(--text-soft); padding: 6px 14px; border-radius: 20px;
+  transition: all 0.25s;
+}
+nav a:hover, nav a.active {
+  background: var(--pink-light); color: var(--pink-deep);
+}
+
+/* SECTIONS */
+section {
+  position: relative; z-index: 1;
+  min-height: 100vh; padding: 80px 20px 60px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+
+/* ===== LANDING ===== */
+#landing {
+  background: linear-gradient(160deg, #fce4ef 0%, #fff0f8 40%, #fdeee4 80%, #ede4f7 100%);
+  text-align: center;
+}
+.landing-deco {
+  font-size: 3rem; animation: bounce 2s ease-in-out infinite;
+  display: block; margin-bottom: 16px;
+}
+@keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+.landing-title {
+  font-family: 'Pacifico', cursive;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  color: var(--pink-deep);
+  line-height: 1.3;
+  max-width: 700px;
+  text-shadow: 2px 2px 0 rgba(244,167,195,0.4);
+  margin-bottom: 16px;
+}
+.landing-sub {
+  font-family: 'Caveat', cursive;
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  color: var(--text-mid);
+  margin-bottom: 40px;
+}
+.badge-18 {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: white; border: 2px solid var(--pink);
+  border-radius: 50px; padding: 8px 20px;
+  font-size: 14px; font-weight: 700; color: var(--pink-deep);
+  margin-bottom: 32px; animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(244,167,195,0.4)} 50%{box-shadow:0 0 0 12px rgba(244,167,195,0)} }
+.btn-main {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--pink) 0%, var(--purple) 100%);
+  color: white; font-family: 'Nunito', sans-serif;
+  font-size: 1rem; font-weight: 800; padding: 16px 36px;
+  border-radius: 50px; border: none; cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 6px 24px rgba(244,167,195,0.5);
+  transition: all 0.3s; letter-spacing: 0.3px;
+}
+.btn-main:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 10px 32px rgba(244,167,195,0.6); }
+.sticker-row {
+  display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
+  margin-top: 40px;
+}
+.sticker {
+  font-size: 2.2rem;
+  animation: wiggle 3s ease-in-out infinite;
+  cursor: pointer; transition: transform 0.2s;
+  position: relative;
+}
+.sticker:nth-child(2) { animation-delay: 0.4s; }
+.sticker:nth-child(3) { animation-delay: 0.8s; }
+.sticker:nth-child(4) { animation-delay: 1.2s; }
+.sticker:nth-child(5) { animation-delay: 1.6s; }
+.sticker:hover { transform: scale(1.3) rotate(10deg); }
+@keyframes wiggle { 0%,100%{transform:rotate(-5deg)} 50%{transform:rotate(5deg)} }
+.sticker-msg {
+  position: absolute; bottom: 110%; left: 50%; transform: translateX(-50%);
+  background: white; color: var(--text-dark); font-size: 12px; font-weight: 700;
+  padding: 8px 14px; border-radius: 12px; white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  border: 1.5px solid var(--pink-light);
+  pointer-events: none; opacity:0; transition: opacity 0.2s;
+  font-family: 'Nunito', sans-serif;
+}
+.sticker:hover .sticker-msg { opacity: 1; }
+
+/* ===== SORRY ===== */
+#sorry {
+  background: linear-gradient(170deg, #fff0f8 0%, #ede4f7 100%);
+}
+.section-inner { max-width: 680px; width: 100%; }
+.section-label {
+  font-size: 11px; font-weight: 800; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--pink);
+  margin-bottom: 12px; display: block;
+}
+.section-title {
+  font-family: 'Pacifico', cursive;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  color: var(--text-dark); line-height: 1.3;
+  margin-bottom: 32px;
+}
+.sorry-card {
+  background: white; border-radius: 24px;
+  padding: 32px; margin-bottom: 20px;
+  border: 1.5px solid rgba(244,167,195,0.25);
+  box-shadow: 0 4px 24px rgba(244,167,195,0.15);
+  position: relative; overflow: hidden;
+}
+.sorry-card::before {
+  content: ''; position: absolute; top:0; left:0; right:0; height:4px;
+  background: linear-gradient(90deg, var(--pink), var(--purple));
+}
+.sorry-text {
+  font-family: 'Caveat', cursive;
+  font-size: 1.25rem; line-height: 1.8;
+  color: var(--text-mid);
+}
+.sorry-text strong { color: var(--pink-deep); font-size: 1.3rem; }
+.fade-in {
+  opacity: 0; transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-in.visible { opacity:1; transform: translateY(0); }
+.small-note {
+  display: inline-block; background: var(--pink-light);
+  color: var(--pink-deep); font-size: 13px; font-weight: 700;
+  padding: 8px 18px; border-radius: 20px; margin-top: 12px;
+}
+
+/* ===== VIDEO ===== */
+#video-section {
+  background: linear-gradient(160deg, #fdeee4 0%, #fff8f3 100%);
+}
+.video-wrapper {
+  background: white; border-radius: 24px; overflow: hidden;
+  box-shadow: 0 8px 32px rgba(244,167,195,0.2);
+  border: 1.5px solid rgba(244,167,195,0.3);
+  max-width: 620px; width: 100%;
+}
+.video-placeholder {
+  width: 100%; aspect-ratio: 16/9;
+  background: linear-gradient(135deg, var(--pink-light) 0%, var(--purple-light) 100%);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 16px; cursor: pointer; position: relative; overflow: hidden;
+}
+.video-placeholder:hover .play-btn { transform: scale(1.1); }
+.play-btn {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: white; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 6px 24px rgba(244,167,195,0.4); font-size: 1.8rem;
+  transition: transform 0.3s;
+}
+.video-placeholder p { font-family: 'Caveat', cursive; font-size: 1.1rem; color: var(--text-mid); }
+.video-caption {
+  padding: 20px 24px; text-align: center;
+  font-family: 'Caveat', cursive; font-size: 1.15rem; color: var(--text-mid);
+  border-top: 1px solid var(--pink-light);
+}
+.upload-hint {
+  font-size: 13px; color: var(--text-soft); margin-top: 8px;
+  font-family: 'Nunito', sans-serif;
+}
+#video-input { display: none; }
+
+/* ===== GALLERY ===== */
+#gallery {
+  background: linear-gradient(170deg, #ede4f7 0%, #fce4ef 100%);
+}
+.gallery-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px; max-width: 720px; width: 100%; margin-top: 8px;
+}
+.gallery-item {
+  border-radius: 16px; overflow: hidden; position: relative;
+  cursor: pointer; aspect-ratio: 1;
+  background: var(--pink-light);
+  border: 2px solid rgba(255,255,255,0.8);
+  box-shadow: 0 4px 16px rgba(244,167,195,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.gallery-item:hover { transform: scale(1.04) rotate(-1deg); box-shadow: 0 8px 28px rgba(244,167,195,0.4); }
+.gallery-item img { width:100%; height:100%; object-fit: cover; display:block; }
+.gallery-item .placeholder-img {
+  width:100%; height:100%; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; gap:8px;
+  color: var(--pink-deep); font-size: 2rem;
+}
+.gallery-item .placeholder-img p { font-size: 11px; font-family: 'Nunito', sans-serif; font-weight: 700; color: var(--text-soft); text-align:center; padding: 0 8px; }
+.gallery-caption {
+  position: absolute; bottom:0; left:0; right:0;
+  background: linear-gradient(0deg, rgba(74,44,58,0.85) 0%, transparent 100%);
+  color: white; font-family: 'Caveat', cursive; font-size: 1rem;
+  padding: 28px 12px 10px;
+  opacity: 0; transition: opacity 0.3s;
+}
+.gallery-item:hover .gallery-caption { opacity: 1; }
+.gallery-add {
+  border-radius: 16px; aspect-ratio: 1;
+  border: 2px dashed var(--pink); background: rgba(255,255,255,0.6);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 8px; cursor: pointer; color: var(--pink-deep); font-size: 1.8rem;
+  transition: all 0.3s; font-family: 'Nunito', sans-serif;
+}
+.gallery-add:hover { background: var(--pink-light); transform: scale(1.02); }
+.gallery-add p { font-size: 12px; font-weight: 700; color: var(--text-soft); }
+#gallery-input { display: none; }
+
+/* ===== STICKERS ===== */
+#stickers-section {
+  background: linear-gradient(160deg, #fff8f3 0%, #fce4ef 100%);
+}
+.stickers-grid {
+  display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;
+  max-width: 600px;
+}
+.big-sticker {
+  width: 110px; height: 110px; border-radius: 24px;
+  background: white; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 6px;
+  cursor: pointer; border: 2px solid var(--pink-light);
+  box-shadow: 0 4px 16px rgba(244,167,195,0.2);
+  transition: all 0.25s; font-size: 2.6rem;
+  position: relative;
+}
+.big-sticker:hover { transform: scale(1.1) rotate(-5deg); box-shadow: 0 8px 28px rgba(244,167,195,0.4); }
+.big-sticker p { font-size: 10px; font-weight: 800; color: var(--text-soft); font-family: 'Nunito', sans-serif; }
+.popup-msg {
+  position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0);
+  background: white; border-radius: 24px; padding: 28px 36px;
+  box-shadow: 0 16px 48px rgba(244,167,195,0.4);
+  border: 2px solid var(--pink-light);
+  text-align: center; z-index: 999; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  max-width: 320px; width: 90%;
+}
+.popup-msg.show { transform: translate(-50%, -50%) scale(1); }
+.popup-msg .emoji { font-size: 3rem; margin-bottom: 12px; display: block; }
+.popup-msg p { font-family: 'Caveat', cursive; font-size: 1.3rem; color: var(--text-mid); line-height: 1.5; }
+.popup-overlay {
+  position: fixed; inset:0; background: rgba(74,44,58,0.2);
+  z-index: 998; opacity:0; pointer-events:none; transition: opacity 0.3s;
+}
+.popup-overlay.show { opacity:1; pointer-events:all; }
+
+/* ===== WISHLIST ===== */
+#wishlist {
+  background: linear-gradient(170deg, #fdeee4 0%, #ede4f7 100%);
+}
+.wishlist-input-row {
+  display: flex; gap: 10px; max-width: 560px; width: 100%; margin-bottom: 20px;
+}
+.wishlist-input-row input {
+  flex:1; padding: 12px 18px; border-radius: 50px;
+  border: 1.5px solid var(--pink); outline: none;
+  font-family: 'Nunito', sans-serif; font-size: 14px; color: var(--text-dark);
+  background: white;
+}
+.wishlist-input-row input:focus { border-color: var(--purple); box-shadow: 0 0 0 3px rgba(201,167,224,0.2); }
+.btn-add-wish {
+  padding: 12px 20px; border-radius: 50px; border: none;
+  background: linear-gradient(135deg, var(--pink), var(--purple));
+  color: white; font-weight: 800; cursor: pointer; font-size: 1.1rem;
+  transition: all 0.25s;
+}
+.btn-add-wish:hover { transform: scale(1.05); }
+.wishlist-items { max-width: 560px; width: 100%; display: flex; flex-direction: column; gap: 10px; }
+.wish-item {
+  background: white; border-radius: 16px; padding: 14px 20px;
+  display: flex; align-items: center; gap: 12px;
+  border: 1.5px solid rgba(244,167,195,0.2);
+  box-shadow: 0 2px 10px rgba(244,167,195,0.1);
+  animation: slideIn 0.3s ease;
+  transition: all 0.2s;
+}
+@keyframes slideIn { from{opacity:0;transform:translateX(-20px)} to{opacity:1;transform:translateX(0)} }
+.wish-check {
+  width: 24px; height: 24px; border-radius: 50%; border: 2px solid var(--pink);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; flex-shrink: 0; transition: all 0.2s; font-size: 12px; color: white;
+  background: transparent;
+}
+.wish-check.done { background: var(--pink); border-color: var(--pink); }
+.wish-item.done-item .wish-text { text-decoration: line-through; color: var(--text-soft); }
+.wish-text { flex:1; font-size: 14px; font-weight: 600; color: var(--text-dark); }
+.wish-emoji { font-size: 1.4rem; }
+.wish-del { background: none; border: none; cursor: pointer; color: var(--text-soft); font-size: 1.1rem; padding: 4px; border-radius: 8px; transition: all 0.2s; }
+.wish-del:hover { color: var(--pink-deep); background: var(--pink-light); }
+
+/* ===== SEND ===== */
+#send-section {
+  background: linear-gradient(160deg, #fce4ef 0%, #ede4f7 100%);
+  text-align: center;
+}
+.send-card {
+  background: white; border-radius: 28px; padding: 40px 32px;
+  max-width: 580px; width: 100%;
+  box-shadow: 0 8px 40px rgba(244,167,195,0.25);
+  border: 1.5px solid rgba(244,167,195,0.3);
+}
+.preview-msg {
+  background: var(--pink-light); border-radius: 16px; padding: 20px;
+  font-family: 'Caveat', cursive; font-size: 1.1rem; color: var(--text-mid);
+  line-height: 1.7; text-align: left; margin: 20px 0;
+  border-left: 4px solid var(--pink);
+}
+.btn-wa {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: #25D366; color: white;
+  font-family: 'Nunito', sans-serif; font-size: 1rem; font-weight: 800;
+  padding: 16px 32px; border-radius: 50px; border: none; cursor: pointer;
+  box-shadow: 0 6px 24px rgba(37,211,102,0.35); transition: all 0.3s;
+  text-decoration: none;
+}
+.btn-wa:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(37,211,102,0.45); }
+.wa-icon { font-size: 1.3rem; }
+
+/* ===== CLOSING ===== */
+#closing {
+  background: linear-gradient(160deg, #fff0f8 0%, #fce4ef 50%, #ede4f7 100%);
+  text-align: center;
+}
+.closing-big {
+  font-family: 'Pacifico', cursive;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  background: linear-gradient(135deg, var(--pink-deep), var(--purple-deep));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  line-height: 1.3; margin-bottom: 20px;
+}
+.heart-burst {
+  font-size: 3rem; display: inline-block;
+  animation: heartBeat 1s ease-in-out infinite;
+}
+@keyframes heartBeat { 0%,100%{transform:scale(1)} 50%{transform:scale(1.2)} }
+.hug-btn {
+  background: linear-gradient(135deg, var(--peach) 0%, var(--pink) 100%);
+  color: white; font-weight: 800; font-size: 1rem; font-family: 'Nunito', sans-serif;
+  padding: 16px 36px; border-radius: 50px; border: none; cursor: pointer;
+  box-shadow: 0 6px 24px rgba(244,167,195,0.4); transition: all 0.3s;
+  margin-top: 32px; display: inline-flex; align-items: center; gap: 8px;
+}
+.hug-btn:hover { transform: scale(1.05); }
+.hug-animation {
+  display: none; font-size: 3.5rem; animation: hugging 0.5s ease-in-out infinite alternate;
+  margin-top: 20px;
+}
+@keyframes hugging { from{transform:scale(1)} to{transform:scale(1.15)} }
+.countdown-box {
+  background: white; border-radius: 20px; padding: 20px 32px;
+  border: 1.5px solid rgba(244,167,195,0.3);
+  margin-top: 32px; display: inline-block;
+}
+.countdown-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--text-soft); margin-bottom: 10px; display: block; }
+.countdown-nums { display: flex; gap: 16px; align-items: center; justify-content: center; }
+.cnum { text-align: center; }
+.cnum span { display: block; font-family: 'Pacifico', cursive; font-size: 2rem; color: var(--pink-deep); }
+.cnum p { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-soft); margin-top: 2px; }
+.cdot { font-family: 'Pacifico', cursive; font-size: 2rem; color: var(--pink-light); }
+
+/* HEART CLICK GAME */
+.game-section {
+  background: var(--purple-light); border-radius: 20px; padding: 24px;
+  max-width: 400px; width: 100%; margin-top: 32px; text-align: center;
+}
+.game-title { font-size: 14px; font-weight: 800; color: var(--text-mid); margin-bottom: 4px; }
+.game-sub { font-size: 12px; color: var(--text-soft); margin-bottom: 16px; }
+.heart-btn-game {
+  font-size: 3rem; background: none; border: none; cursor: pointer;
+  transition: transform 0.1s; display: block; margin: 0 auto 12px;
+}
+.heart-btn-game:active { transform: scale(0.85); }
+.heart-count { font-family: 'Pacifico', cursive; font-size: 2rem; color: var(--pink-deep); }
+.heart-msg-game { font-size: 13px; color: var(--text-soft); margin-top: 6px; font-style: italic; min-height: 20px; }
+
+/* SCROLLBAR */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--pink); border-radius: 3px; }
+
+@media(max-width: 500px) {
+  nav { gap: 0; }
+  nav a { padding: 6px 8px; font-size: 10px; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<!-- FLOATING HEARTS -->
+<div class="hearts-bg" id="hearts-bg"></div>
+
+<!-- POPUP OVERLAY -->
+<div class="popup-overlay" id="popup-overlay" onclick="closePopup()"></div>
+<div class="popup-msg" id="popup-msg">
+  <span class="emoji" id="popup-emoji">💖</span>
+  <p id="popup-text">Aku sayang kamu!</p>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#landing">🏠</a>
+  <a href="#sorry">💌</a>
+  <a href="#video-section">🎥</a>
+  <a href="#gallery">🖼️</a>
+  <a href="#stickers-section">🧸</a>
+  <a href="#wishlist">🌟</a>
+  <a href="#send-section">📤</a>
+  <a href="#closing">💖</a>
+</nav>
+
+<!-- ===== LANDING ===== -->
+<section id="landing">
+  <span class="landing-deco">💖</span>
+  <div class="badge-18">🎀 18 Bulan · 18 September 2024 – 18 Maret 2026 🎀</div>
+  <h1 class="landing-title">Untuk Putdal, dari seseorang yang selalu excited sama kamu 💖</h1>
+  <p class="landing-sub">"Hari ini 18 bulan kita… dan aku masih mau terus sama kamu"</p>
+  <a href="#sorry" class="btn-main">👉 Klik kalau kamu mau lihat isi hatiku</a>
+
+  <div class="sticker-row">
+    <div class="sticker" onclick="showPopup('🥺','Jangan marah ya… aku ga kuat 🥺')">🐻<span class="sticker-msg">Jangan marah ya 🥺</span></div>
+    <div class="sticker" onclick="showPopup('💖','Aku sayang kamu banget, tau ga? 💖')">💝<span class="sticker-msg">Aku sayang kamu 💖</span></div>
+    <div class="sticker" onclick="showPopup('🤗','Peluk virtual dari aku buat kamu! 🤗')">🤗<span class="sticker-msg">Peluk virtual!</span></div>
+    <div class="sticker" onclick="showPopup('✨','Kamu cantik banget hari ini ✨')">🌸<span class="sticker-msg">Kamu cantik ✨</span></div>
+    <div class="sticker" onclick="showPopup('😭','Ini aku ngetik sambil mikirin kamu 😭💖')">💌<span class="sticker-msg">Dari hatiku 💌</span></div>
+  </div>
+</section>
+
+<!-- ===== SORRY ===== -->
+<section id="sorry">
+  <div class="section-inner">
+    <span class="section-label">💌 Untuk Putdal</span>
+    <h2 class="section-title">Aku mau bilang sesuatu…</h2>
+
+    <div class="sorry-card fade-in">
+      <p class="sorry-text">
+        <strong>Hai Putdal… 💖</strong><br><br>
+        Aku bikin ini bukan karena aku sempurna… tapi justru karena aku sadar aku banyak kurangnya…<br><br>
+        Hari ini 18 bulan kita… dan dari semua hari yang kita lewatin, aku masih tetep milih kamu… dari dulu sampai sekarang.
+      </p>
+      <span class="small-note">kalau kamu baca ini, berarti aku masih beruntung 💖</span>
+    </div>
+
+    <div class="sorry-card fade-in">
+      <p class="sorry-text">
+        <strong>Aku minta maaf ya… 🥺</strong><br><br>
+        Maaf kalau aku sering bikin kamu ngerasa ga dimengerti…<br>
+        Maaf kalau aku kadang kurang peka… kurang dengerin… atau malah bikin kamu capek sendiri…<br><br>
+        Aku tau… disayang itu bukan cuma dari kata-kata, tapi dari sikap… dari perhatian kecil… dan aku sadar, aku belum selalu ngasih itu ke kamu…
+      </p>
+      <span class="small-note">jangan lama-lama marah ya… aku ga kuat 🥺</span>
+    </div>
+
+    <div class="sorry-card fade-in">
+      <p class="sorry-text">
+        <strong>Aku tau kamu itu orang yang… 💭</strong><br><br>
+        Pengen disayang dengan cara yang tulus… pengen dipahami tanpa harus selalu jelasin…<br><br>
+        Kamu cuma pengen ditemenin… ditemenin yang bener-bener hadir… bukan setengah-setengah…<br><br>
+        Dan jujur… aku masih belajar buat jadi orang itu buat kamu…
+      </p>
+      <span class="small-note">ini aku ngetik sambil mikirin kamu 😭</span>
+    </div>
+
+    <div class="sorry-card fade-in">
+      <p class="sorry-text">
+        <strong>Tapi dari semua itu… 💖</strong><br><br>
+        Aku ga pernah ngerasa kita itu sia-sia…<br>
+        Dari hal kecil… dari ketawa random… dari momen yang mungkin orang lain anggap biasa… itu semua berharga banget buat aku…<br><br>
+        Kamu… selalu jadi bagian yang bikin aku excited… bahkan sampai sekarang…
+      </p>
+    </div>
+
+    <div class="sorry-card fade-in">
+      <p class="sorry-text">
+        <strong>Aku ga janji bakal langsung berubah sempurna… 🌷</strong><br><br>
+        Tapi aku janji… aku bakal usaha…<br>
+        Usaha buat lebih dengerin kamu… lebih ngerti kamu… lebih peka sama perasaan kamu…<br><br>
+        Karena jujur… aku ga mau kehilangan kamu cuma karena aku ga cukup berusaha…
+      </p>
+    </div>
+
+    <div class="sorry-card fade-in" style="border: 2px solid var(--pink); background: linear-gradient(135deg, #fff0f8, #ede4f7);">
+      <p class="sorry-text">
+        <strong>Di hari ke-18 bulan kita ini… 🎁</strong><br><br>
+        Aku cuma mau kamu tau satu hal…<br><br>
+        Dari semua orang… aku masih milih kamu…<br>
+        Masih mau sama kamu… masih mau jalan bareng kamu…<br><br>
+        Jadi… kalau kamu masih mau… aku pengen kita mulai lagi… pelan-pelan… bareng-bareng 💖<br><br>
+        — dari aku, yang selalu excited sama kamu 🥺✨
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VIDEO ===== -->
+<section id="video-section">
+  <div class="section-inner" style="align-items:center;text-align:center;">
+    <span class="section-label">🎥 Buat Kamu</span>
+    <h2 class="section-title">Karena aku tau kamu suka yang lucu…</h2>
+
+    <!-- FOLDER INSTRUCTION BOX -->
+    <div style="background:white;border:1.5px dashed var(--pink);border-radius:16px;padding:16px 24px;max-width:580px;width:100%;margin-bottom:20px;text-align:left;">
+      <p style="font-size:12px;font-weight:800;color:var(--pink-deep);margin-bottom:6px;font-family:'Nunito',sans-serif;">📁 Cara pakai folder video:</p>
+      <p style="font-size:12px;color:var(--text-soft);font-family:'Nunito',sans-serif;line-height:1.7;">
+        1. Buat folder <code style="background:var(--pink-light);padding:2px 6px;border-radius:6px;font-size:11px;">video</code> di sebelah file HTML ini<br>
+        2. Taruh file video (MP4/MOV/WEBM) ke dalam folder tersebut<br>
+        3. Daftarkan nama file-nya di bagian <code style="background:var(--pink-light);padding:2px 6px;border-radius:6px;font-size:11px;">VIDEO_FILES</code> di script bawah<br>
+        4. Buka ulang HTML-nya — video langsung muncul semua! ✨
+      </p>
+    </div>
+
+    <!-- VIDEO CAROUSEL -->
+    <div class="video-wrapper" id="video-carousel-wrap" style="max-width:620px;width:100%;">
+      <div id="video-area" style="width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,var(--pink-light),var(--purple-light));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;position:relative;overflow:hidden;">
+        <div class="play-btn" style="font-size:2rem;">🎬</div>
+        <p style="font-family:'Caveat',cursive;font-size:1.1rem;color:var(--text-mid);">Video akan muncul di sini</p>
+        <p style="font-size:12px;color:var(--text-soft);font-family:'Nunito',sans-serif;">Daftarkan nama file di VIDEO_FILES ↓</p>
+      </div>
+      <!-- Nav arrows -->
+      <div id="video-nav" style="display:none;position:absolute;top:50%;left:0;right:0;transform:translateY(-50%);pointer-events:none;z-index:5;padding:0 10px;display:flex;justify-content:space-between;">
+        <button onclick="prevVideo()" style="pointer-events:all;background:rgba(255,255,255,0.85);border:none;border-radius:50%;width:36px;height:36px;font-size:1rem;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.1);">◀</button>
+        <button onclick="nextVideo()" style="pointer-events:all;background:rgba(255,255,255,0.85);border:none;border-radius:50%;width:36px;height:36px;font-size:1rem;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.1);">▶</button>
+      </div>
+      <div id="video-dots" style="display:flex;justify-content:center;gap:6px;padding:10px 0 4px;"></div>
+      <div class="video-caption">
+        "Aku tau kamu suka yang lucu… jadi aku ga mau kamu nangis terus 🥺"
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALLERY ===== -->
+<section id="gallery">
+  <span class="section-label">🖼️ Kenangan Kita</span>
+  <h2 class="section-title">Momen yang bikin aku ga mau kehilangan kamu…</h2>
+
+  <!-- FOLDER INSTRUCTION BOX -->
+  <div style="background:white;border:1.5px dashed var(--purple);border-radius:16px;padding:16px 24px;max-width:700px;width:100%;margin-bottom:24px;text-align:left;">
+    <p style="font-size:12px;font-weight:800;color:var(--purple-deep);margin-bottom:6px;font-family:'Nunito',sans-serif;">📁 Cara pakai folder foto:</p>
+    <p style="font-size:12px;color:var(--text-soft);font-family:'Nunito',sans-serif;line-height:1.7;">
+      1. Buat folder <code style="background:var(--purple-light);padding:2px 6px;border-radius:6px;font-size:11px;">foto</code> di sebelah file HTML ini<br>
+      2. Taruh semua foto (JPG/PNG/WEBP) ke dalam folder tersebut<br>
+      3. Daftarkan nama file + caption di bagian <code style="background:var(--purple-light);padding:2px 6px;border-radius:6px;font-size:11px;">FOTO_FILES</code> di script bawah<br>
+      4. Buka ulang HTML-nya — semua foto langsung tampil di galeri! 💖
+    </p>
+  </div>
+
+  <div class="gallery-grid" id="gallery-grid"></div>
+
+  <p style="margin-top:16px;font-size:12px;color:var(--text-soft);font-family:'Nunito',sans-serif;">
+    Klik foto untuk melihat lebih besar ✨
+  </p>
+</section>
+
+<!-- ===== STICKERS ===== -->
+<section id="stickers-section">
+  <span class="section-label">🧸 Sticker Interaktif</span>
+  <h2 class="section-title">Klik sticker buat dapet pesan dari aku 💌</h2>
+
+  <div class="stickers-grid">
+    <div class="big-sticker" onclick="showPopup('🥺','Jangan marah ya… aku ga kuat kalau kamu marah lama 🥺')">🥺<p>Jangan marah</p></div>
+    <div class="big-sticker" onclick="showPopup('💖','Aku sayang kamu banget. Beneran. Bukan lebay. 💖')">💖<p>Sayang kamu</p></div>
+    <div class="big-sticker" onclick="showPopup('🤗','Peluk virtual dari aku buat kamu sekarang! 🤗✨')">🤗<p>Peluk virtual</p></div>
+    <div class="big-sticker" onclick="showPopup('🌸','Kamu cantik banget tau ga… aku mau kamu selalu tau itu 🌸')">🌸<p>Kamu cantik</p></div>
+    <div class="big-sticker" onclick="showPopup('😭','Ini aku ngetik sambil senyum-senyum mikirin kamu 😭💕')">😭<p>Mikirin kamu</p></div>
+    <div class="big-sticker" onclick="showPopup('✨','Kamu selalu bikin aku excited, ga bohong ✨')">⭐<p>Excited!</p></div>
+    <div class="big-sticker" onclick="showPopup('🍜','Kita harus makan bareng lagi ya… aku mau dengerin cerita kamu 🍜')">🍜<p>Makan bareng</p></div>
+    <div class="big-sticker" onclick="showPopup('💝','18 bulan bareng kamu adalah salah satu hal terbaik yang pernah terjadi ke aku 💝')">💝<p>18 bulan</p></div>
+  </div>
+</section>
+
+<!-- ===== WISHLIST ===== -->
+<section id="wishlist">
+  <span class="section-label">🌟 Wishlist Kita</span>
+  <h2 class="section-title">Hal-hal yang pengen aku wujudin bareng kamu…</h2>
+
+  <div class="wishlist-input-row">
+    <input type="text" id="wish-input" placeholder="Tulis impian kita bareng… 🌸" onkeydown="if(event.key==='Enter')addWish()">
+    <button class="btn-add-wish" onclick="addWish()">➕</button>
+  </div>
+
+  <div class="wishlist-items" id="wishlist-items"></div>
+</section>
+
+<!-- ===== SEND ===== -->
+<section id="send-section">
+  <div class="section-inner" style="align-items:center;">
+    <span class="section-label">📤 Kirim ke Putdal</span>
+    <h2 class="section-title" style="text-align:center;">Generate pesan & kirim ke WhatsApp 💌</h2>
+
+    <div class="send-card">
+      <p style="font-size:13px;color:var(--text-soft);margin-bottom:8px;font-family:'Nunito',sans-serif;">Preview pesan:</p>
+      <div class="preview-msg" id="preview-msg">
+        Hai Putdal 💖 Ini wishlist kita yang aku pengen banget wujudin bareng kamu… Aku minta maaf ya, dan aku masih mau terus sama kamu 🥺 – dari aku yang selalu excited sama kamu
+      </div>
+
+      <p style="font-size:12px;color:var(--text-soft);margin-bottom:16px;font-family:'Nunito',sans-serif;">
+        Nomor WhatsApp Putdal (tanpa tanda +):
+      </p>
+      <input type="tel" id="wa-number" placeholder="Contoh: 6281234567890" style="width:100%;padding:12px 18px;border-radius:50px;border:1.5px solid var(--pink);outline:none;font-family:'Nunito',sans-serif;font-size:14px;color:var(--text-dark);background:white;margin-bottom:20px;">
+
+      <div style="display:flex;flex-direction:column;gap:12px;align-items:center;">
+        <button onclick="generateMsg()" class="btn-main" style="font-size:0.9rem;padding:12px 28px;">✨ Generate Pesan</button>
+        <a id="wa-btn" href="#" class="btn-wa" onclick="return sendWA()">
+          <span class="wa-icon">💬</span> Kirim ke WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CLOSING ===== -->
+<section id="closing">
+  <span class="heart-burst">💖</span>
+  <h2 class="closing-big">Aku masih milih kamu</h2>
+  <p style="font-family:'Caveat',cursive;font-size:1.4rem;color:var(--text-mid);max-width:500px;line-height:1.7;">
+    "Dari semua orang… dari semua pilihan… aku masih milih kamu. Selalu kamu. 🥺✨"
+  </p>
+
+  <button class="hug-btn" onclick="doHug()">🤗 Peluk aku (virtual)</button>
+  <div class="hug-animation" id="hug-anim">🤗💕🤗</div>
+
+  <!-- COUNTDOWN -->
+  <div class="countdown-box">
+    <span class="countdown-label">🎀 Kita udah bareng selama…</span>
+    <div class="countdown-nums" id="countdown-nums">
+      <div class="cnum"><span id="cd-days">548</span><p>hari</p></div>
+      <span class="cdot">:</span>
+      <div class="cnum"><span id="cd-hours">0</span><p>jam</p></div>
+      <span class="cdot">:</span>
+      <div class="cnum"><span id="cd-mins">0</span><p>menit</p></div>
+      <span class="cdot">:</span>
+      <div class="cnum"><span id="cd-secs">0</span><p>detik</p></div>
+    </div>
+  </div>
+
+  <!-- HEART GAME -->
+  <div class="game-section">
+    <p class="game-title">Mini Game: Klik hati sebanyak mungkin! 💖</p>
+    <p class="game-sub">Setiap klik = satu rasa sayang buat kamu</p>
+    <button class="heart-btn-game" onclick="clickHeart()">💖</button>
+    <div class="heart-count" id="heart-count">0</div>
+    <div class="heart-msg-game" id="heart-msg"></div>
+  </div>
+
+  <p style="margin-top:48px;font-family:'Caveat',cursive;font-size:1.1rem;color:var(--text-soft);">
+    — dari aku, yang selalu excited sama kamu 🥺✨
+  </p>
+</section>
+
+<script>
+// FLOATING HEARTS
+const heartsBg = document.getElementById('hearts-bg');
+const heartEmojis = ['💖','💕','💗','💓','✨','🌸','💝','💞'];
+for(let i=0;i<20;i++){
+  const h = document.createElement('span');
+  h.className = 'floating-heart';
+  h.textContent = heartEmojis[Math.floor(Math.random()*heartEmojis.length)];
+  h.style.left = Math.random()*100 + 'vw';
+  h.style.animationDuration = (8+Math.random()*12) + 's';
+  h.style.animationDelay = (Math.random()*10) + 's';
+  h.style.fontSize = (0.8+Math.random()*1.2) + 'rem';
+  heartsBg.appendChild(h);
+}
+
+// POPUP
+function showPopup(emoji, text){
+  document.getElementById('popup-emoji').textContent = emoji;
+  document.getElementById('popup-text').textContent = text;
+  document.getElementById('popup-msg').classList.add('show');
+  document.getElementById('popup-overlay').classList.add('show');
+  // pop sound effect via vibration
+  if(navigator.vibrate) navigator.vibrate(50);
+}
+function closePopup(){
+  document.getElementById('popup-msg').classList.remove('show');
+  document.getElementById('popup-overlay').classList.remove('show');
+}
+
+// FADE IN ON SCROLL
+const fades = document.querySelectorAll('.fade-in');
+const obs = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
+},{threshold:0.15});
+fades.forEach(f=>obs.observe(f));
+
+// =====================================================
+// 🎥 DAFTAR FILE VIDEO — edit di sini!
+// Taruh file video di folder: video/
+// Format: { file: 'nama-file.mp4', label: 'Caption video' }
+// =====================================================
+const VIDEO_FILES = [
+  { file: 'putdal-lucu.mp4', label: 'Cantiknya Aku Selalu 😂💕' },
+  { file: 'gift-photobooth-pertama.mp4',   label: 'Video kita bareng 🥺💖' },
+  { file: 'makan-nasigoreng.mp4',   label: 'Video Mam Nasi Goreng Bareng Di Suapin HEHEHHEE 🥺💖' },
+  { file: 'seneng-bungamerah.mp4',   label: 'Photobooth Bareng Bunga dan Putdal Cantik 💖💕' },
+  // tambahkan file lain di sini ↓
+  // { file: 'nama-file.mp4', label: 'Caption...' },
+];
+
+// =====================================================
+// 🖼️ DAFTAR FILE FOTO — edit di sini!
+// Taruh foto di folder: foto/
+// Format: { file: 'nama-file.jpg', caption: 'Caption foto' }
+// =====================================================
+const FOTO_FILES = [
+  { file: 'foto-pertama.jpg', caption: 'Foto pertama kita 🥺' },
+  { file: 'makan-rotidulu.jpg', caption: 'Momen paling bahagia mam roti di suapin 💕' },
+  { file: 'seneng-abisbelibunga.jpg', caption: 'Seneng Banget Abis Beli Bunga 😂' },
+  { file: 'oke-ocebanget.jpeg', caption: 'Ini waktu kamu paling gemes 😭💖' },
+  // tambahkan foto lain di sini ↓
+  // { file: 'nama-file.jpg', caption: 'Caption...' },
+];
+
+// --- VIDEO PLAYER ---
+let currentVideo = 0;
+function initVideos(){
+  const area = document.getElementById('video-area');
+  const nav = document.getElementById('video-nav');
+  const dots = document.getElementById('video-dots');
+  if(!VIDEO_FILES.length){ return; }
+  nav.style.display = VIDEO_FILES.length > 1 ? 'flex' : 'none';
+  dots.innerHTML = VIDEO_FILES.map((_,i)=>`<span class="vdot" id="vdot-${i}" onclick="goVideo(${i})" style="width:8px;height:8px;border-radius:50%;background:var(--pink-light);cursor:pointer;transition:all 0.2s;display:inline-block;"></span>`).join('');
+  goVideo(0);
+}
+function goVideo(i){
+  currentVideo = i;
+  const area = document.getElementById('video-area');
+  const v = VIDEO_FILES[i];
+  const ext = v.file.split('.').pop().toLowerCase();
+  const typeMap = {mp4:'video/mp4',mov:'video/mp4',webm:'video/webm',ogg:'video/ogg'};
+  area.innerHTML = `<video controls style="width:100%;height:100%;object-fit:contain;background:#000;border-radius:0;" preload="metadata"><source src="video/${v.file}" type="${typeMap[ext]||'video/mp4'}">Browser tidak support video ini.</video>`;
+  document.querySelectorAll('.vdot').forEach((d,idx)=>{
+    d.style.background = idx===i ? 'var(--pink-deep)' : 'var(--pink-light)';
+    d.style.transform = idx===i ? 'scale(1.3)' : 'scale(1)';
+  });
+  // update caption
+  const cap = document.querySelector('.video-caption');
+  if(cap) cap.firstChild.textContent = `"${v.label}"`;
+}
+function prevVideo(){ goVideo((currentVideo - 1 + VIDEO_FILES.length) % VIDEO_FILES.length); }
+function nextVideo(){ goVideo((currentVideo + 1) % VIDEO_FILES.length); }
+
+// --- GALLERY LOADER ---
+function initGallery(){
+  const grid = document.getElementById('gallery-grid');
+  grid.innerHTML = '';
+  if(!FOTO_FILES.length){
+    grid.innerHTML = `<div style="color:var(--text-soft);font-size:13px;font-family:'Nunito',sans-serif;text-align:center;padding:40px;grid-column:1/-1;">Tambahkan foto di FOTO_FILES dan taruh di folder foto/ 🌸</div>`;
+    return;
+  }
+  FOTO_FILES.forEach((f, i)=>{
+    const item = document.createElement('div');
+    item.className = 'gallery-item fade-in';
+    item.innerHTML = `<img src="foto/${f.file}" alt="${f.caption}" onerror="this.parentElement.querySelector('.placeholder-img') && (this.style.display='none');this.nextElementSibling&&(this.nextElementSibling.style.display='none');this.parentElement.innerHTML='<div class=\\'placeholder-img\\'>🖼️<p>${f.file}</p></div><div class=\\'gallery-caption\\'>${f.caption}</div>'"><div class="gallery-caption">${f.caption}</div>`;
+    item.onclick = ()=>{ window.open('foto/'+f.file,'_blank'); };
+    setTimeout(()=>item.classList.add('visible'), i*80);
+    grid.appendChild(item);
+    obs.observe(item);
+  });
+}
+
+initVideos();
+initGallery();
+
+// WISHLIST
+let wishes = [
+  {id:1,text:'Nonton bareng lagi 🎬',done:false},
+  {id:2,text:'Makan favorit kamu 🍜',done:false},
+  {id:3,text:'Jalan tanpa berantem 😭',done:false},
+  {id:4,text:'Traveling bareng suatu hari 🌏',done:false},
+  {id:5,text:'Dinner romantis buat kamu 🌹',done:false},
+];
+let nextWishId = 6;
+const wishEmojis = ['🌸','💕','✨','🥺','💖','🌟','🎀','💝','🍜','🎬','🌏','🤗'];
+
+function renderWishes(){
+  const list = document.getElementById('wishlist-items');
+  list.innerHTML = '';
+  wishes.forEach(w=>{
+    const emoji = wishEmojis[w.id % wishEmojis.length];
+    const item = document.createElement('div');
+    item.className = 'wish-item' + (w.done?' done-item':'');
+    item.innerHTML = `
+      <span class="wish-emoji">${emoji}</span>
+      <span class="wish-text">${w.text}</span>
+      <div class="wish-check ${w.done?'done':''}" onclick="toggleWish(${w.id})">${w.done?'✓':''}</div>
+      <button class="wish-del" onclick="deleteWish(${w.id})">✕</button>`;
+    list.appendChild(item);
+  });
+  updatePreview();
+}
+
+function addWish(){
+  const input = document.getElementById('wish-input');
+  const text = input.value.trim(); if(!text) return;
+  wishes.push({id:nextWishId++,text,done:false});
+  input.value = '';
+  renderWishes();
+}
+function toggleWish(id){ const w=wishes.find(x=>x.id===id); if(w) w.done=!w.done; renderWishes(); }
+function deleteWish(id){ wishes=wishes.filter(x=>x.id!==id); renderWishes(); }
+
+function updatePreview(){
+  const undone = wishes.filter(w=>!w.done).map(w=>w.text).slice(0,3).join(', ');
+  const msg = `Hai Putdal 💖 Ini wishlist kita yang aku pengen banget wujudin bareng kamu: ${undone||'semua hal bareng kamu'}… Aku minta maaf ya, dan aku masih mau terus sama kamu 🥺 Aku masih milih kamu, dari dulu sampai sekarang. – dari aku yang selalu excited sama kamu ✨`;
+  document.getElementById('preview-msg').textContent = msg;
+}
+
+function generateMsg(){
+  const undone = wishes.filter(w=>!w.done).map(w=>w.text).join(', ');
+  const msg = `Hai Putdal 💖\n\nAku udah bikin sesuatu khusus buat kamu hari ini, di hari ke-18 bulan kita 🎀\n\nIni wishlist kita yang pengen aku wujudin bareng kamu:\n${undone||'semua hal indah bareng kamu'}\n\nAku minta maaf ya… aku sadar banyak kurangku. Tapi aku selalu mau belajar jadi yang terbaik buat kamu 🥺\n\nDari semua orang… aku masih milih kamu. Selalu kamu 💖\n\n— dari aku, yang selalu excited sama kamu ✨`;
+  document.getElementById('preview-msg').textContent = msg;
+}
+
+function sendWA(){
+  const num = document.getElementById('wa-number').value.trim().replace(/\D/g,'');
+  const msg = document.getElementById('preview-msg').textContent;
+  const url = `https://wa.me/${num}?text=${encodeURIComponent(msg)}`;
+  window.open(url,'_blank');
+  return false;
+}
+
+// COUNTDOWN
+const startDate = new Date('2024-09-18T00:00:00');
+function updateCountdown(){
+  const now = new Date();
+  const diff = now - startDate;
+  const secs = Math.floor(diff/1000);
+  const mins = Math.floor(secs/60);
+  const hrs = Math.floor(mins/60);
+  const days = Math.floor(hrs/24);
+  document.getElementById('cd-days').textContent = days;
+  document.getElementById('cd-hours').textContent = hrs%24;
+  document.getElementById('cd-mins').textContent = mins%60;
+  document.getElementById('cd-secs').textContent = secs%60;
+}
+updateCountdown();
+setInterval(updateCountdown,1000);
+
+// HUG
+function doHug(){
+  const anim = document.getElementById('hug-anim');
+  anim.style.display = 'block';
+  showPopup('🤗','Peluk erat dari aku buat kamu… Semoga kamu ngerasain hangatnya 💖');
+  setTimeout(()=>anim.style.display='none',4000);
+}
+
+// HEART GAME
+let heartCount = 0;
+const heartMsgs = {
+  1:'Sayang pertama 🥺',5:'Wah kamu ngeklik banyak! 💕',10:'10 rasa sayang buat kamu 💖',
+  20:'Kamu mau banyak-banyak? 😭✨',50:'50 sayang!! Kamu yang terbaik 🌸',
+  100:'100!! Aku juga sayang kamu segitu 💝',200:'Udah 200… aku beneran ga bisa berhenti sayang kamu 😭💖'
+};
+function clickHeart(){
+  heartCount++;
+  document.getElementById('heart-count').textContent = heartCount;
+  const msg = heartMsgs[heartCount];
+  if(msg) document.getElementById('heart-msg').textContent = msg;
+  // burst mini hearts
+  const burst = document.createElement('span');
+  burst.textContent = '💖';
+  burst.style.cssText = `position:fixed;left:${Math.random()*80+10}vw;top:${Math.random()*60+20}vh;font-size:${Math.random()*1+0.8}rem;pointer-events:none;z-index:999;animation:floatUp 1.5s ease forwards;opacity:0.8;`;
+  document.body.appendChild(burst);
+  setTimeout(()=>burst.remove(),1500);
+}
+
+renderWishes();
+</script>
+</body>
+</html>
